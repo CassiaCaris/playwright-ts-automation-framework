@@ -72,27 +72,27 @@ playwright-ts-automation-framework/
 │   ├── web
 │   └── docker-compose.yaml
 ├── doc/                      # onde se encontra as imagens do Readme
-├── node_modules/            # onde se encontram as informações da instalação do projeto "fica no local"
-├── playwright-report/       # onde se encontram as informações dos screenshot e video da execução
-│   ├── data/                # onde ficam as imagens e videos
+├── node_modules/             # onde se encontram as informações da instalação do projeto "fica no local"
+├── playwright-report/        # onde se encontram as informações dos screenshot e video da execução "fica no local"
+│   ├── data/                
 │   └── index.html         
 ├── support/     
 │   ├── actions/             # onde se encontram o desenvolvimento dos elementos  
 │   │   ├── components       # onde se encontram o desenvolvimento dos elementos utilizados por todas as telas
 │   │   └── *.ts             # onde se encontram o desenvolvimento dos elementos das telas
-│   ├── api              # onde se encontram o desenvolvimento da API
-│   ├── db               # onde se encontram o desenvolvimento dos comandos de Banco de Dados do Mongodb
+│   ├── api                  # onde se encontram o desenvolvimento da API
+│   ├── db                   # onde se encontram o desenvolvimento dos comandos de Banco de Dados do Mongodb
 │   └── fixtures             # onde se encontram as massas de teste
-├── test/                     # onde estão as Stec de UI/API
-│   ├── api                       # onde estão as Stec de API
+├── test/                    # onde estão as Stec de UI/API
+│   ├── api                  # onde estão as Stec de API
 │   │   └── profile.ts
-│   ├── ui                       # onde estão as Stec de UI
+│   ├── ui                   # onde estão as Stec de UI
 │   │   ├── home.spec.ts
 │   │   ├── link.spec.ts
 │   │   ├── login.spec.ts
 │   │   ├── signup.spec.ts
 │   │   └── social.spec.ts
-├── test-results             # Evidências de falhas
+├── test-results             # Evidências de falhas "fica no local"
 ├── .gitignore             
 ├── package-lock.json  
 ├── package.json  
