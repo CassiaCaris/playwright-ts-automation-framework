@@ -166,17 +166,16 @@ Em outro terminal, pode realizar a execução do playwright por um dos comandos 
 | `npx playwright show-report`                         | Abre o último relatório de testes gerado     |
 | `npx playwright codegen http://localhost:3000/login` | Abre o navegador com o gerador de testes     |
 
+*Onde encontrar as informações do Relatório*<br>
+Após a execução será gerado o relatório na pasta *\playwright-report*.<br>
+![Pasta do relatório somente com os Screenshot](doc/pastaRelatorio.png)
 
-**Visualizar relatório**
+**Visualizar relatório**<br>
 Após a execução do comando para executar a automação via headless é disponibilizado um comando para abrir o relatorio:
 ![Execução no terminal na pasta do projeto](doc/execuçãoHedless.png)
 ```bash
 npx playwright show-report
 ```
-
-*Onde encontrar as informações do Relatório*
-Após a execução será gerado o relatório na pasta *\playwright-report*.<br>
-![Pasta do relatório somente com os Screenshot](doc/pastaRelatorio.png)
 
 *Apresentação do Relatório*
 ![Relatório somente com Screenshot e Video](doc/Relatorio_Screenshot_video.png)
