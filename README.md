@@ -1,6 +1,12 @@
 # 🎭 Automação com Playwright
 ---
 
+# 🎭 Automação com Playwright
+
+![Playwright Tests](https://github.com/CassiaCaris/playwright-ts-automation-framework/actions/workflows/playwright.yml/badge.svg)
+
+---
+
 ## 📖 Sobre o Projeto
 
 Este projeto contém a suíte de testes automatizados da aplicação Linkaí, um gerenciador de links pessoais que integra:
@@ -66,16 +72,17 @@ O framework foi estruturado para separar responsabilidades entre testes e camada
 ```bash
 playwright-ts-automation-framework/
 │
+├── .github/                  # pasta para a execução da automação Automatica no Github Actions
+│   └── workflows
+│   │   └── playwright.yml
 ├── api-doc/                  # onde se encontra as API's do Projeto usando pelo Bruno
 ├── apps/                     # onde contém os dados do desenvolvimento da Aplicação
 │   ├── api
 │   ├── web
 │   └── docker-compose.yaml
 ├── doc/                      
-├── node_modules/             # pastas geradas localmente
-├── playwright-report/        # pastas geradas localmente
-│   ├── data/                
-│   └── index.html         
+├── node_modules/             # pgerado localmente (não versionado)
+├── playwright-report/        # gerado após execução dos testes     
 ├── support/     
 │   ├── actions/               
 │   │   ├── components       # informações dos elementos utilizados por todas as telas
@@ -84,15 +91,15 @@ playwright-ts-automation-framework/
 │   ├── db                   # comandos de Banco de Dados do Mongodb
 │   └── fixtures             # massas de teste
 ├── test/                    
-│   ├── api                  # onde estão as Stec de API
+│   ├── api                  # onde estão as Specs de API
 │   │   └── profile.ts
-│   ├── ui                   # onde estão as Stec de UI
+│   ├── ui                   # onde estão as Specs de UI
 │   │   ├── home.spec.ts
 │   │   ├── link.spec.ts
 │   │   ├── login.spec.ts
 │   │   ├── signup.spec.ts
 │   │   └── social.spec.ts
-├── test-results             # pastas geradas localmente
+├── test-results             # evidências e traces do Playwright
 ├── .gitignore             
 ├── package-lock.json  
 ├── package.json  
@@ -124,7 +131,7 @@ playwright-ts-automation-framework/
 
 ---
 
-### ▶️ Como Executar o Projeto
+### ▶️ Execução Local
 
 **Instalar dependências**
 ``` bash
@@ -183,6 +190,84 @@ npx playwright show-report
 Ao clicar no caso de teste
 ![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
 ![Detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshoteVideo.png)
+
+---
+
+## 🚀 Execução Automatizada com GitHub Actions
+
+O projeto possui integração contínua através do GitHub Actions para execução automática dos testes Playwright.
+
+### Quando a pipeline é executada
+
+A automação é executada automaticamente quando ocorre:
+
+- Push na branch `main`
+- Criação ou atualização de Pull Requests
+- Execução manual pela aba **Actions**
+
+### Fluxo da Pipeline
+
+Durante a execução, o GitHub Actions realiza:
+
+1. Checkout do código
+2. Configuração do Node.js
+3. Instalação das dependências
+4. Inicialização do MongoDB via Docker
+5. Inicialização da API
+6. Inicialização da aplicação Web
+7. Instalação dos browsers do Playwright
+8. Execução dos testes automatizados
+9. Geração do relatório HTML
+10. Publicação do relatório como Artifact
+
+### Executar Manualmente
+
+1. Acesse a aba **Actions**
+2. Selecione o workflow **Playwright Tests**
+3. Clique em **Run workflow**
+4. Escolha a branch desejada
+5. Clique em **Run workflow**
+
+### Visualizando os Resultados
+
+Após a execução:
+
+1. Acesse **Actions**
+2. Abra a execução desejada
+3. Clique no job **test**
+4. Role até o final da página
+5. Baixe o Artifact **playwright-report**
+
+Após extrair o arquivo ZIP:
+
+```bash
+playwright-report/index.html
+```
+
+Abra o arquivo no navegador para visualizar:
+
+- Resultado dos testes
+- Screenshots
+- Vídeos
+- Traces
+- Logs de execução
+- Tempo de execução
+
+## Consultando o Histórico
+
+Acesse:
+
+```text
+GitHub > Actions > Playwright Tests
+```
+
+Nessa área é possível acompanhar:
+
+- Histórico das execuções
+- Tempo de execução
+- Logs completos
+- Status da pipeline
+- Relatórios publicados
 
 ---
 
