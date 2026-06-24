@@ -72,8 +72,8 @@ playwright-ts-automation-framework/
 │   ├── web
 │   └── docker-compose.yaml
 ├── doc/                      
-├── node_modules/             # versões da instalação "fica no local"
-├── playwright-report/        # screenshot e video da execução do relatorio "fica no local"
+├── node_modules/             # pastas geradas localmente
+├── playwright-report/        # pastas geradas localmente
 │   ├── data/                
 │   └── index.html         
 ├── support/     
@@ -92,7 +92,7 @@ playwright-ts-automation-framework/
 │   │   ├── login.spec.ts
 │   │   ├── signup.spec.ts
 │   │   └── social.spec.ts
-├── test-results             # Evidências de falhas "fica no local"
+├── test-results             # pastas geradas localmente
 ├── .gitignore             
 ├── package-lock.json  
 ├── package.json  
@@ -154,7 +154,7 @@ npm run dev
 
 ---
 
-**Executar todos os testes**<br>
+**Executar de todos os casos de testes do projeto**<br>
 Em outro terminal, pode realizar a execução do playwright por um dos comandos na tabela:
 
 | Comando                                              | Descrição                                    |
@@ -199,4 +199,4 @@ Ao clicar no caso de teste
 
 ## 🚧 Status do Projeto
 
-Projeto em evolução contínua para aprimoramento de arquitetura e cobertura de testes..
+Projeto em evolução contínua para aprimoramento de arquitetura e cobertura de testes.
