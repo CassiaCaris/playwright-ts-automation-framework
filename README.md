@@ -5,11 +5,11 @@
 
 Este projeto contém a suíte de testes automatizados da aplicação Linkaí, um gerenciador de links pessoais que integra:
 
-API REST (Node.js)
-Banco de dados NoSQL (MongoDB)
-Frontend Web (React + Vite)
+* API REST (Node.js)
+* Banco de dados NoSQL (MongoDB)
+* Frontend Web (React + Vite)
 
-O objetivo do framework é validar de ponta a ponta os fluxos críticos da aplicação, garantindo qualidade tanto na camada de UI (E2E) quanto na camada de API.
+O objetivo do framework é validar de ponta a ponta os fluxos críticos da aplicação, garantindo qualidade tanto na camada de **UI (E2E)** quanto na camada de **API**.
 
 ---
 
@@ -72,16 +72,16 @@ playwright-ts-automation-framework/
 │   ├── web
 │   └── docker-compose.yaml
 ├── doc/                      # onde se encontra as imagens do Readme
-├── node_modules/             # onde se encontram as informações da instalação do projeto "fica no local"
-├── playwright-report/        # onde se encontram as informações dos screenshot e video da execução "fica no local"
+├── node_modules/             # onde se encontram as versões da instalação "fica no local"
+├── playwright-report/        # onde os screenshot e video da execução do relatorio "fica no local"
 │   ├── data/                
 │   └── index.html         
 ├── support/     
-│   ├── actions/             # onde se encontram o desenvolvimento dos elementos  
-│   │   ├── components       # onde se encontram o desenvolvimento dos elementos utilizados por todas as telas
-│   │   └── *.ts             # onde se encontram o desenvolvimento dos elementos das telas
-│   ├── api                  # onde se encontram o desenvolvimento da API
-│   ├── db                   # onde se encontram o desenvolvimento dos comandos de Banco de Dados do Mongodb
+│   ├── actions/               
+│   │   ├── components       # informações dos elementos utilizados por todas as telas
+│   │   └── *.ts             # informações dos elementos das telas
+│   ├── api                  # onde se encontram o desenvolvimento das informações da API
+│   ├── db                   # onde se encontram os comandos de Banco de Dados do Mongodb
 │   └── fixtures             # onde se encontram as massas de teste
 ├── test/                    # onde estão as Stec de UI/API
 │   ├── api                  # onde estão as Stec de API
