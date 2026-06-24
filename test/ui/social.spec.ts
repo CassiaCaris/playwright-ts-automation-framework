@@ -1,10 +1,10 @@
 import { test } from '@playwright/test'
 
-import { getAuthActions } from '../support/actions/auth'
-import { getToast } from '../support/actions/components/Toast'
+import { getAuthActions } from '../../support/actions/auth'
+import { getToast } from '../../support/actions/components/Toast'
 
-import { getUserwithSocialMedia } from '../support/fixtures/User'
-import { getSocialActions } from '../support/actions/social'
+import { getUserwithSocialMedia } from '../../support/fixtures/User'
+import { getSocialActions } from '../../support/actions/social'
 
 import { insertUser, removeUserByUsername } from '../support/database'
 

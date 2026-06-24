@@ -1,11 +1,11 @@
 import { test } from '@playwright/test'
 
-import { getToast } from '../support/actions/components/Toast'
-import { getAuthActions } from '../support/actions/auth'
+import { getToast } from '../../support/actions/components/Toast'
+import { getAuthActions } from '../../support/actions/auth'
 
 import { removeUserByEmail, insertUser, removeUserByUsername } from '../support/actions/db/database'
 
-import { User, getNewUser, getDuplicateUser, getDuplicateUser2 } from '../support/fixtures/User'
+import { User, getNewUser, getDuplicateUser, getDuplicateUser2 } from '../../support/fixtures/User'
 
 
 test('deve cadastrar um novo usuário com sucesso', async ({ page }) => {

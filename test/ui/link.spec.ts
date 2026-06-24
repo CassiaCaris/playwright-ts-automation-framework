@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test'
 
-import { getAuthActions } from '../support/actions/auth'
-import { getLinkActions } from '../support/actions/link'
-import { getToast } from '../support/actions/components/Toast'
+import { getAuthActions } from '../../support/actions/auth'
+import { getLinkActions } from '../../support/actions/link'
+import { getToast } from '../../support/actions/components/Toast'
 
-import { User, getUserwithLink, getUserwithLinks } from '../support/fixtures/User'
+import { User, getUserwithLink, getUserwithLinks } from '../../support/fixtures/User'
 import { insertUser, removeUserByUsername, removeLinks } from '../support/actions/db/database'
 
 test('deve cadastrar um novo link', async ({ page }) => {
