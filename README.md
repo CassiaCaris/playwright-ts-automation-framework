@@ -154,7 +154,7 @@ npm run dev
 
 ---
 
-**Executar todos os testes**
+**Executar todos os testes**<br>
 Em outro terminal, pode realizar a execução do playwright por um dos comandos na tabela:
 
 | Comando                                              | Descrição                                    |
