@@ -62,15 +62,15 @@ A arquitetura evoluiu de um modelo baseado em Page Objects para uma abordagem or
 ```bash
 playwright-ts-automation-framework/
 │
+├── api                       # onde estão as Stec por API
+│   └── profile.ts
 ├── api-doc/                  # onde se encontra as API's do Projeto usando pelo Bruno
 ├── apps/                     # onde contém os dados do desenvolvimento da Aplicação
 │   ├── api
 │   ├── web
 │   └── docker-compose.yaml
 ├── doc/                      # onde se encontra as imagens do Readme
-├── e2e/                      # onde estão as Stec por Tela / API
-│   ├── api
-│   │   └── profile.ts
+├── e2e/                      # onde estão as Stec por Tela
 │   ├── home.spec.ts
 │   ├── link.spec.ts
 │   ├── login.spec.ts
@@ -82,10 +82,10 @@ playwright-ts-automation-framework/
 │   └── index.html         
 ├── support/     
 │   ├── actions/             # onde se encontram o desenvolvimento dos elementos  
-│   │   ├── api              # onde se encontram o desenvolvimento da API
 │   │   ├── components       # onde se encontram o desenvolvimento dos elementos utilizados por todas as telas
-│   │   ├── db               # onde se encontram o desenvolvimento dos comandos de Banco de Dados do Mongodb
-│   │   ├── *.ts             # onde se encontram o desenvolvimento dos elementos das telas
+│   │   └── *.ts             # onde se encontram o desenvolvimento dos elementos das telas
+│   ├── api              # onde se encontram o desenvolvimento da API
+│   ├── db               # onde se encontram o desenvolvimento dos comandos de Banco de Dados do Mongodb
 │   └── fixtures             # onde se encontram as massas de teste
 ├── test-results             # Evidências de falhas
 ├── .gitignore             
