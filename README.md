@@ -80,7 +80,7 @@ playwright-ts-automation-framework/
 │   ├── actions/               
 │   │   ├── components       # informações dos elementos utilizados por todas as telas
 │   │   └── *.ts             # informações dos elementos das telas
-│   ├── api                  # desenvolvimento das informações da API
+│   ├── clients              # desenvolvimento das informações da API
 │   ├── db                   # comandos de Banco de Dados do Mongodb
 │   └── fixtures             # massas de teste
 ├── test/                    
