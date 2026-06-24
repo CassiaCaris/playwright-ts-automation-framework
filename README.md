@@ -1,7 +1,4 @@
 # 🎭 Automação com Playwright
----
-
-# 🎭 Automação com Playwright
 
 ![Playwright Tests](https://github.com/CassiaCaris/playwright-ts-automation-framework/actions/workflows/playwright.yml/badge.svg)
 
