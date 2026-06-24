@@ -71,19 +71,19 @@ playwright-ts-automation-framework/
 │   ├── api
 │   ├── web
 │   └── docker-compose.yaml
-├── doc/                      # onde se encontra as imagens do Readme
-├── node_modules/             # onde se encontram as versões da instalação "fica no local"
-├── playwright-report/        # onde os screenshot e video da execução do relatorio "fica no local"
+├── doc/                      
+├── node_modules/             # versões da instalação "fica no local"
+├── playwright-report/        # screenshot e video da execução do relatorio "fica no local"
 │   ├── data/                
 │   └── index.html         
 ├── support/     
 │   ├── actions/               
 │   │   ├── components       # informações dos elementos utilizados por todas as telas
 │   │   └── *.ts             # informações dos elementos das telas
-│   ├── api                  # onde se encontram o desenvolvimento das informações da API
-│   ├── db                   # onde se encontram os comandos de Banco de Dados do Mongodb
-│   └── fixtures             # onde se encontram as massas de teste
-├── test/                    # onde estão as Stec de UI/API
+│   ├── api                  # desenvolvimento das informações da API
+│   ├── db                   # comandos de Banco de Dados do Mongodb
+│   └── fixtures             # massas de teste
+├── test/                    
 │   ├── api                  # onde estão as Stec de API
 │   │   └── profile.ts
 │   ├── ui                   # onde estão as Stec de UI
