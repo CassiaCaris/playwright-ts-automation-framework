@@ -1,9 +1,9 @@
 import { expect, request, test } from '@playwright/test'
 
-import { removeUserByEmail } from '../support/database'
-import { createFullProfile } from '../support/services'
+import { removeUserByEmail } from '../../support/actions/db/database'
+import { createFullProfile } from '../../support/actions/api/services'
 
-import profile from '../support/fixtures/profile.json'
+import profile from '../../support/fixtures/profile.json'
 
 //quando criado o describe.serial estamos falando que essa Spec será a unica executando de forma sequencial e não paralela.
 // para não qter que criar massa para cada caso de teste. 
