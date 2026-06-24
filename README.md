@@ -62,15 +62,37 @@ A arquitetura evoluiu de um modelo baseado em Page Objects para uma abordagem or
 ```bash
 playwright-ts-automation-framework/
 │
-├── tests/                 # Testes E2E e API
-├── pages/                 # Abstrações de páginas (UI)
-├── features/              # Actions baseadas em funcionalidades
-├── services/             # Camada de API
-├── utils/                # Utilitários gerais
-├── data/                 # Massa de dados
-├── config/               # Configurações do framework
-├── playwright.config.ts  # Configuração do Playwright
-└── package.json
+├── api-doc/                  # onde se encontra as API's do Projeto usando pelo Bruno
+├── apps/                     # onde contém os dados do desenvolvimento da Aplicação
+│   ├── api
+│   ├── web
+│   └── docker-compose.yaml
+├── doc/                      # onde se encontra as imagens do Readme
+├── e2e/                      # onde estão as Stec por Tela / API
+│   ├── api
+│   │   └── profile.ts
+│   ├── home.spec.ts
+│   ├── link.spec.ts
+│   ├── login.spec.ts
+│   ├── signup.spec.ts
+│   └── social.spec.ts
+├── node_modules/            # onde se encontram as informações da instalação do projeto "fica no local"
+├── playwright-report/       # onde se encontram as informações dos screenshot e video da execução
+│   ├── data/                # onde ficam as imagens e videos
+│   └── index.html         
+├── support/     
+│   ├── actions/             # onde se encontram o desenvolvimento dos elementos  
+│   │   ├── api              # onde se encontram o desenvolvimento da API
+│   │   ├── components       # onde se encontram o desenvolvimento dos elementos utilizados por todas as telas
+│   │   ├── db               # onde se encontram o desenvolvimento dos comandos de Banco de Dados do Mongodb
+│   │   ├── *.ts             # onde se encontram o desenvolvimento dos elementos das telas
+│   └── fixtures             # onde se encontram as massas de teste
+├── test-results             # Evidências de falhas
+├── .gitignore             
+├── package-lock.json  
+├── package.json  
+├── playwright.config.ts     # Configuração do Playwright
+└── Readme.md
 ```
 
 ---
