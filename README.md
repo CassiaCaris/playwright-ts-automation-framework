@@ -6,35 +6,43 @@
 
 ## 📖 Sobre o Projeto
 
-Este projeto contém a suíte de testes automatizados da aplicação Linkaí, um gerenciador de links pessoais que integra:
+Framework de automação de testes desenvolvido com **Playwright + TypeScript**, projetado para validar fluxos End-to-End (UI) e serviços REST (API) da aplicação Linkaí.
 
-* API REST (Node.js)
-* Banco de dados NoSQL (MongoDB)
-* Frontend Web (React + Vite)
+O projeto foi construído seguindo boas práticas de automação, separação de responsabilidades e integração contínua, permitindo a execução local e automatizada através do GitHub Actions.
 
-O objetivo do framework é validar de ponta a ponta os fluxos críticos da aplicação, garantindo qualidade tanto na camada de **UI (E2E)** quanto na camada de **API**.
+---
+
+## 🚀 Principais Características
+
+* Testes UI (End-to-End)
+* Testes API REST
+* Integração com MongoDB
+* Geração dinâmica de dados com Faker.js
+* Evidências automáticas (Screenshots, Vídeos e Traces)
+* Integração contínua com GitHub Actions
+* Estrutura escalável baseada em Actions e Fixtures
+* Relatórios HTML do Playwright
 
 ---
 
 ## 🎯 Objetivo
 
-Garantir a qualidade da aplicação através de:
+Este framework foi criado para demonstrar:
 
-* Testes automatizados de interface (UI)
-* Testes automatizados de API REST
-* Validação de fluxos críticos do usuário
-* Isolamento e controle de dados de teste
-* Execução confiável e reprodutível
+* Automação de testes de interface
+* Automação de testes de API
+* Arquitetura de framework Playwright
+* Integração contínua (CI/CD)
+* Gerenciamento de massa de dados
+* Boas práticas de QA Automation
 
 ---
 
 ## 🧪 Tipos de Testes
 
-O projeto está dividido em dois principais tipos de automação:
-
 ### 🖥️ UI Tests (E2E)
 
-Testes de interface simulando comportamento real do usuário:
+Fluxos validados:
 
 * Login
 * Cadastro
@@ -44,7 +52,7 @@ Testes de interface simulando comportamento real do usuário:
 
 ### 🔌 API Tests
 
-Testes diretos na camada de serviços:
+Validações realizadas:
 
 * Validação de endpoints
 * Autenticação
@@ -55,13 +63,15 @@ Testes diretos na camada de serviços:
 
 ## 🏗️ Arquitetura do Projeto
 
-O framework foi estruturado para separar responsabilidades entre testes e camadas de suporte:
+O framework foi estruturado seguindo o princípio de separação de responsabilidades:
 
-* Testes organizados por tipo (UI e API)
-* Actions reutilizáveis para fluxos de negócio
-* Camada de serviços para consumo da API
-* Camada de banco de dados para setup e teardown
-* Fixtures para massa de dados de teste
+* UI Tests
+* API Tests
+* Actions
+* Clients
+* Database Layer
+* Fixtures
+* CI/CD
 
 ---
 
@@ -72,33 +82,26 @@ playwright-ts-automation-framework/
 ├── .github/                  # pasta para a execução da automação Automatica no Github Actions
 │   └── workflows
 │   │   └── playwright.yml
+│
 ├── api-doc/                  # onde se encontra as API's do Projeto usando pelo Bruno
+│
 ├── apps/                     # onde contém os dados do desenvolvimento da Aplicação
 │   ├── api
 │   ├── web
 │   └── docker-compose.yaml
+│
 ├── doc/                      
-├── node_modules/             # pgerado localmente (não versionado)
-├── playwright-report/        # gerado após execução dos testes     
+│
 ├── support/     
 │   ├── actions/               
-│   │   ├── components       # informações dos elementos utilizados por todas as telas
-│   │   └── *.ts             # informações dos elementos das telas
 │   ├── clients              # desenvolvimento das informações da API
 │   ├── db                   # comandos de Banco de Dados do Mongodb
 │   └── fixtures             # massas de teste
+│
 ├── test/                    
 │   ├── api                  # onde estão as Specs de API
-│   │   └── profile.ts
-│   ├── ui                   # onde estão as Specs de UI
-│   │   ├── home.spec.ts
-│   │   ├── link.spec.ts
-│   │   ├── login.spec.ts
-│   │   ├── signup.spec.ts
-│   │   └── social.spec.ts
-├── test-results             # evidências e traces do Playwright
-├── .gitignore             
-├── package-lock.json  
+│   └── ui                   # onde estão as Specs de UI
+│
 ├── package.json  
 ├── playwright.config.ts     # Configuração do Playwright
 └── Readme.md
@@ -108,13 +111,16 @@ playwright-ts-automation-framework/
 
 ## ⚙️ Tecnologias Utilizadas
 
-* Playwright
-* TypeScript
-* Node.js
-* MongoDB
-* Faker.js
-* bcryptjs
-* Bruno (API testing & documentation)
+| Tecnologia | Finalidade |
+|------------|------------|
+| Playwright | Automação UI e API |
+| TypeScript | Linguagem principal |
+| Node.js    | Runtime |
+| MongoDB    | Banco de dados |
+| Faker.js   | Massa de dados |
+| bcryptjs   | Criptografia   |
+| Bruno      | Documentação e testes de API |
+| GitBub Actions | Integração contínua |
 
 ---
 
@@ -125,6 +131,7 @@ playwright-ts-automation-framework/
 * Testes independentes e isolados
 * Uso de actions para reutilização de fluxos
 * Separação entre UI e API tests
+* Evidências automáticas
 
 ---
 
@@ -158,30 +165,78 @@ npm run dev
 
 ---
 
-**Executar de todos os casos de testes do projeto**<br>
-Em outro terminal, pode realizar a execução do playwright por um dos comandos na tabela:
+**Executar os testes**<br>
+| Comando               | Descrição                                |
+| :-------------------- | :--------------------------------------- |
+| `npm test`            | Executa todos os testes                  |
+| `npm run test:ui`     | Executa apenas testes UI                 |
+| `npm run test:api`    | Executa apenas testes API                |
+| `npm run test:headed` | Execução de todos os testes via headless |
+| `npm run report`      | Abre o relatório HTML                    |
 
-| Comando                                              | Descrição                                    |
-| :--------------------------------------------------- | :------------------------------------------- |
-| `npx playwright test`                                | Executa todos os testes em modo headless     |
-| `npx playwright test --headed`                       | Executa os testes exibindo o navegador       |
-| `npx playwright test --ui`                           | Abre a interface interativa do Playwright    |
-| `npx playwright test --debug`                        | Abre o inspetor do Playwright para depuração |
-| `npx playwright show-report`                         | Abre o último relatório de testes gerado     |
-| `npx playwright codegen http://localhost:3000/login` | Abre o navegador com o gerador de testes     |
+---
 
-*Onde encontrar as informações do Relatório*<br>
-Após a execução será gerado o relatório na pasta *\playwright-report*.<br>
-![Pasta do relatório somente com os Screenshot](doc/pastaRelatorio.png)
+## 📊 Relatórios e Evidências
 
-**Visualizar relatório**<br>
-Após a execução do comando para executar a automação via headless é disponibilizado um comando para abrir o relatorio:
-![Execução no terminal na pasta do projeto](doc/execuçãoHedless.png)
+O framework gera automaticamente:
+
+* Screenshots
+* Vídeos
+* Traces
+* Relatório HTML
+
+Abrir relatório:
 ```bash
 npx playwright show-report
 ```
 
-*Apresentação do Relatório*
+**Exemplo de Evidências**
+* Screenshot em falhas
+* Vídeo da execução
+* Trace para depuração
+* Histórico detalhado dos passos
+
+---
+
+## 🚀 Integração Contínua (GitHub Actions)
+
+O projeto possui execução automatizada utilizando GitHub Actions.
+
+**Quando a Pipeline é Executada**
+* Push na branch main
+* Pull Request
+* Execução manual
+
+**Fluxo da Pipeline**
+1. Checkout do código
+2. Instalação das dependências
+3. Inicialização do MongoDB
+4. Inicialização da API
+5. Inicialização do Frontend
+6. Instalação dos browsers Playwright
+7. Execução dos testes
+8. Geração do relatório
+9. Publicação do relatório
+
+**Executar Manualmente**
+```text
+GitHub → Actions → Playwright Tests → Run Workflow
+```
+
+**Visualizar Relatórios da Pipeline**
+
+Após a execução:
+
+* Acesse Actions
+* Abra a execução desejada
+* Clique no Job "test"
+* Baixe o Artifact "playwright-report"
+
+Após extrair o ZIP:
+
+playwright-report/index.html
+
+segue imagem do relatório
 ![Relatório somente com Screenshot e Video](doc/Relatorio_Screenshot_video.png)
 
 Ao clicar no caso de teste
@@ -190,67 +245,7 @@ Ao clicar no caso de teste
 
 ---
 
-## 🚀 Execução Automatizada com GitHub Actions
-
-O projeto possui integração contínua através do GitHub Actions para execução automática dos testes Playwright.
-
-### Quando a pipeline é executada
-
-A automação é executada automaticamente quando ocorre:
-
-- Push na branch `main`
-- Criação ou atualização de Pull Requests
-- Execução manual pela aba **Actions**
-
-### Fluxo da Pipeline
-
-Durante a execução, o GitHub Actions realiza:
-
-1. Checkout do código
-2. Configuração do Node.js
-3. Instalação das dependências
-4. Inicialização do MongoDB via Docker
-5. Inicialização da API
-6. Inicialização da aplicação Web
-7. Instalação dos browsers do Playwright
-8. Execução dos testes automatizados
-9. Geração do relatório HTML
-10. Publicação do relatório como Artifact
-
-### Executar Manualmente
-
-1. Acesse a aba **Actions**
-2. Selecione o workflow **Playwright Tests**
-3. Clique em **Run workflow**
-4. Escolha a branch desejada
-5. Clique em **Run workflow**
-
-### Visualizando os Resultados
-
-Após a execução:
-
-1. Acesse **Actions**
-2. Abra a execução desejada
-3. Clique no job **test**
-4. Role até o final da página
-5. Baixe o Artifact **playwright-report**
-
-Após extrair o arquivo ZIP:
-
-```bash
-playwright-report/index.html
-```
-
-Abra o arquivo no navegador para visualizar:
-
-- Resultado dos testes
-- Screenshots
-- Vídeos
-- Traces
-- Logs de execução
-- Tempo de execução
-
-## Consultando o Histórico
+## Consultando o Histórico da execução automatica 
 
 Acesse:
 
@@ -270,15 +265,34 @@ Nessa área é possível acompanhar:
 
 ## 📊 O que este projeto demonstra
 
-* Automação de testes UI e API
-* Estruturação de framework com Playwright
-* Separação de responsabilidades
+* Playwright com TypeScript
+* Testes UI e API
+* Integração com Banco de Dados
+* Geração de Massa de Dados
+* Estruturação de Framework
+* Evidências Automatizadas
+* GitHub Actions
+* CI/CD
 * Boas práticas de QA Automation
-* Controle de dados de teste com banco de dados
-* Reutilização de fluxos via actions
+* Arquitetura escalável
 
 ---
 
-## 🚧 Status do Projeto
+## 🚧 Roadmap
 
-Projeto em evolução contínua para aprimoramento de arquitetura e cobertura de testes.
+Próximas evoluções:
+
+* Execução paralela em múltiplos navegadores
+* Dashboards de métricas
+* Integração com Azure DevOps
+* Testes visuais
+* Execução distribuída
+* IA aplicada à automação de testes
+
+---
+
+## 👩‍💻 Autora
+
+Cassia Caris
+
+Especialista em Qualidade de Software, Automação de Testes e Engenharia de Qualidade.
