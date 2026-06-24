@@ -20,11 +20,33 @@ jobs:
         with:
           node-version: 22
 
-      - name: Instalar dependências
+      - name: Instalar dependências do projeto de testes
         run: npm ci
+
+      - name: Instalar dependências da API
+        run: npm ci
+        working-directory: apps/api
+
+      - name: Instalar dependências da Web
+        run: npm ci
+        working-directory: apps/web
+
+      - name: Subir MongoDB com Docker
+        run: docker compose -f apps/docker-compose.yaml up -d
+
+      - name: Iniciar API
+        run: npm run dev &
+        working-directory: apps/api
+
+      - name: Iniciar Web
+        run: npm run dev &
+        working-directory: apps/web
 
       - name: Instalar browsers do Playwright
         run: npx playwright install --with-deps
+
+      - name: Aguardar aplicação subir
+        run: npx wait-on http://localhost:3000 http://localhost:3333
 
       - name: Executar testes
         run: npm test
