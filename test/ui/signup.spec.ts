@@ -3,7 +3,7 @@ import { test } from '@playwright/test'
 import { getToast } from '../../support/actions/components/Toast'
 import { getAuthActions } from '../../support/actions/auth'
 
-import { removeUserByEmail, insertUser, removeUserByUsername } from '../support/actions/db/database'
+import { removeUserByEmail, insertUser, removeUserByUsername } from '../../support/db/mongoClient'
 
 import { User, getNewUser, getDuplicateUser, getDuplicateUser2 } from '../../support/fixtures/User'
 

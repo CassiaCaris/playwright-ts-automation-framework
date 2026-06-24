@@ -1,7 +1,7 @@
 import { expect, request, test } from '@playwright/test'
 
-import { removeUserByEmail } from '../../support/actions/db/database'
-import { createFullProfile } from '../../support/actions/api/services'
+import { removeUserByEmail } from '../../support/db/mongoClient'
+import { createFullProfile } from '../../support/clients/apiClient'
 
 import profile from '../../support/fixtures/profile.json'
 

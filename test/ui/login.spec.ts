@@ -4,7 +4,7 @@ import { getToast } from '../../support/actions/components/Toast'
 import { getAuthActions } from '../../support/actions/auth'
 
 import { User, getLoginUser} from '../../support/fixtures/User'
-import {insertUser, removeUserByUsername} from '../support/actions/db/database'
+import {insertUser, removeUserByUsername} from '../../support/db/mongoClient'
 
 const user: User = getLoginUser()
 

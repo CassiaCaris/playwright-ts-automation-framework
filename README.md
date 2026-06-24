@@ -131,25 +131,59 @@ playwright-ts-automation-framework/
 npm install
 ```
 
-**Instalar browsers do Playwright**
-``` bash
-npx playwright install
+**Inicializar o Banco de Dados (Docker)**
+Na raiz da pasta `/apps`, inicie os serviços de banco de dados:
+```bash
+docker-compose up -d
 ```
+
+**Inicializar a API (Backend)**
+Em um novo terminal, acesse `/apps/api`:
+```bash
+npm install   # Caso seja a primeira execução
+npm run dev
+```
+
+**Inicializar a Aplicação Web App (Frontend)**
+Em outro terminal, acesse `linkai/apps/web`:
+```bash
+npm install   # Caso seja a primeira execução
+npm run dev
+```
+> A aplicação deverá estar disponível em: `http://localhost:3000`
+
+---
 
 **Executar todos os testes**
-``` bash
-npx playwright test
-```
+Em outro terminal, pode realizar a execução do playwright por um dos comandos na tabela:
 
-*Executar testes em modo UI*
-``` bash
-npx playwright test --ui
-```
+| Comando                                              | Descrição                                    |
+| :--------------------------------------------------- | :------------------------------------------- |
+| `npx playwright test`                                | Executa todos os testes em modo headless     |
+| `npx playwright test --headed`                       | Executa os testes exibindo o navegador       |
+| `npx playwright test --ui`                           | Abre a interface interativa do Playwright    |
+| `npx playwright test --debug`                        | Abre o inspetor do Playwright para depuração |
+| `npx playwright show-report`                         | Abre o último relatório de testes gerado     |
+| `npx playwright codegen http://localhost:3000/login` | Abre o navegador com o gerador de testes     |
+
 
 **Visualizar relatório**
-``` bash
+Após a execução do comando para executar a automação via headless é disponibilizado um comando para abrir o relatorio:
+![Execução no terminal na pasta do projeto](doc/execuçãoHedless.png)
+```bash
 npx playwright show-report
 ```
+
+*Onde encontrar as informações do Relatório*
+Após a execução será gerado o relatório na pasta *\playwright-report*.<br>
+![Pasta do relatório somente com os Screenshot](doc/pastaRelatorio.png)
+
+*Apresentação do Relatório*
+![Relatório somente com Screenshot e Video](doc/Relatorio_Screenshot_video.png)
+
+Ao clicar no caso de teste
+![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
+![Detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshoteVideo.png)
 
 ---
 

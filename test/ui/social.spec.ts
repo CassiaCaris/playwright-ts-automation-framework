@@ -6,7 +6,7 @@ import { getToast } from '../../support/actions/components/Toast'
 import { getUserwithSocialMedia } from '../../support/fixtures/User'
 import { getSocialActions } from '../../support/actions/social'
 
-import { insertUser, removeUserByUsername } from '../support/database'
+import { insertUser, removeUserByUsername } from '../../support/db/mongoClient'
 
 test.describe.serial('Redes Sociais', () => {
 
