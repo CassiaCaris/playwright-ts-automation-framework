@@ -350,6 +350,20 @@ Nessa área é possível acompanhar:
 
 ---
 
+## 📈 Evolução de Framework
+
+Este projeto nasceu como um estudo de **Playwright + TypeScript** e evolui continuamente para se tornar um framework de referência em ***Engenharia de Qualidade***.
+
+A cada nova funcionalidade implementada, esta seção é atualizada para refletir o nível de maturidade do framework.
+
+<!-- framework-evolution:start -->
+
+(Esta seção é gerada automaticamente)
+
+<!-- framework-evolution:end -->
+
+---
+
 ## 📊 O que este projeto demonstra
 
 * Playwright + TypeScript
@@ -384,6 +398,10 @@ Próximas evoluções:
 
 ## 👩‍💻 Autora
 
-Cassia Caris
+**Cassia Caris**
 
-Especialista em Qualidade de Software, Automação de Testes e Engenharia de Qualidade.
+Quality Engineer
+
+Especialista em Automação de Testes
+
+Playwright • TypeScript • API Testing • Quality Engineering

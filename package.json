@@ -13,7 +13,8 @@
     "test:firefox": "npx playwright test --project=firefox",
     "test:webkit": "npx playwright test --project=webkit",
     "test:edge": "npx playwright test --project='Microsoft Edge'",
-    "test:chrome": "npx playwright test --project='Google Chrome'"
+    "test:chrome": "npx playwright test --project='Google Chrome'",
+    "update:evolution": "tsx doc/generate-evolution.ts"
   },
   "keywords": [],
   "author": "",
