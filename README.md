@@ -113,22 +113,24 @@ A validação em múltiplos navegadores garante maior compatibilidade da aplica�
 
 O framework foi estruturado seguindo separação de responsabilidades:
 
-UI Tests / API Tests 
-        │ 
-        ▼ 
-     Actions 
-        │ 
-        ▼ 
-     Clients 
-        │ 
-        ▼ 
-  Database Layer 
-        │ 
-        ▼ 
-     Fixtures 
-        │ 
-        ▼ 
-   GitHub Actions
+```text
+          UI Tests / API Tests
+                   │
+                   ▼
+               Actions
+                   │
+                   ▼
+               Clients
+                   │
+                   ▼
+            Database Layer
+                   │
+                   ▼
+               Fixtures
+                   │
+                   ▼
+            GitHub Actions
+```
 
 ---
 
