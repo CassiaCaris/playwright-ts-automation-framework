@@ -357,9 +357,6 @@ Este projeto nasceu como um estudo de **Playwright + TypeScript** e evolui conti
 A cada nova funcionalidade implementada, esta seção é atualizada para refletir o nível de maturidade do framework.
 
 <!-- framework-evolution:start -->
-
-(Esta seção é gerada automaticamente)
-
 <!-- framework-evolution:end -->
 
 ---
