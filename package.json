@@ -8,7 +8,12 @@
     "test:ui": "playwright test test/ui",
     "test:api": "playwright test test/api",
     "test:headed": "playwright test --headed",
-    "report": "playwright show-report"
+    "report": "playwright show-report",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:edge": "npx playwright test --project='Microsoft Edge'",
+    "test:chrome": "npx playwright test --project='Google Chrome'"
   },
   "keywords": [],
   "author": "",
