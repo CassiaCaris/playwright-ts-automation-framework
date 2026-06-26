@@ -8,18 +8,18 @@ Framework de automação de testes desenvolvido com **Playwright** + **TypeScrip
 
 ## 🚀 Principais Características
 
-✅ Testes End-to-End (UI)
-✅ Testes de API REST
-✅ Execução Cross-Browser (Chromium, Firefox e WebKit)
-✅ Execução paralela dos testes
-✅ Execução Cross-Browser
-✅ Compatibilidade com Chromium, Firefox, WebKit, Google Chrome e Microsoft Edge
-✅ Integração com MongoDB
-✅ Ambiente preparado com Docker
-✅ GitHub Actions (CI/CD)
-✅ Relatórios HTML do Playwright
-✅ Evidências automáticas (Screenshots, Vídeos e Traces)
-✅ Estrutura baseada em Actions, Clients e Fixtures
+* ✅ Testes End-to-End (UI)
+* ✅ Testes de API REST
+* ✅ Execução Cross-Browser (Chromium, Firefox e WebKit)
+* ✅ Execução paralela dos testes
+* ✅ Execução Cross-Browser
+* ✅ Compatibilidade com Chromium, Firefox, WebKit, Google Chrome e Microsoft Edge
+* ✅ Integração com MongoDB
+* ✅ Ambiente preparado com Docker
+* ✅ GitHub Actions (CI/CD)
+* ✅ Relatórios HTML do Playwright
+* ✅ Evidências automáticas (Screenshots, Vídeos e Traces)
+* ✅ Estrutura baseada em Actions, Clients e Fixtures
 
 ---
 
