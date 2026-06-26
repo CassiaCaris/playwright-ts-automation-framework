@@ -1,40 +1,72 @@
 # 🎭 Automação com Playwright
 
-![Playwright Tests](https://github.com/CassiaCaris/playwright-ts-automation-framework/actions/workflows/playwright.yml/badge.svg)
+![Playwright Tests](https://github.com/CassiaCaris/playwright-ts-automation-framework/actions/workflows/playwright.yml/badge.svg)<br>
 
----
-
-## 📖 Sobre o Projeto
-
-Framework de automação de testes desenvolvido com **Playwright + TypeScript**, projetado para validar fluxos End-to-End (UI) e serviços REST (API) da aplicação Linkaí.
-
-O projeto foi construído seguindo boas práticas de automação, separação de responsabilidades e integração contínua, permitindo a execução local e automatizada através do GitHub Actions.
+Framework de automação de testes desenvolvido com **Playwright** + **TypeScript**, projetado para validar fluxos ***UI (End-to-End)*** e ***API REST***, seguindo boas práticas de Engenharia de Qualidade, integração contínua e arquitetura escalável.
 
 ---
 
 ## 🚀 Principais Características
 
-* Testes UI (End-to-End)
-* Testes API REST
-* Integração com MongoDB
-* Geração dinâmica de dados com Faker.js
-* Evidências automáticas (Screenshots, Vídeos e Traces)
-* Integração contínua com GitHub Actions
-* Estrutura escalável baseada em Actions e Fixtures
-* Relatórios HTML do Playwright
+✅ Testes End-to-End (UI)
+✅ Testes de API REST
+✅ Execução Cross-Browser (Chromium, Firefox e WebKit)
+✅ Execução paralela dos testes
+✅ Execução Cross-Browser
+✅ Compatibilidade com Chromium, Firefox, WebKit, Google Chrome e Microsoft Edge
+✅ Integração com MongoDB
+✅ Ambiente preparado com Docker
+✅ GitHub Actions (CI/CD)
+✅ Relatórios HTML do Playwright
+✅ Evidências automáticas (Screenshots, Vídeos e Traces)
+✅ Estrutura baseada em Actions, Clients e Fixtures
 
 ---
 
-## 🎯 Objetivo
+📌 Recursos do Framework
+| Recurso              | Status |
+|-----------------------|:------:|
+| UI Tests             | ✅ |
+| API Tests            | ✅ |
+| Execução Paralela    | ✅ |
+| Chromium             | ✅ |
+| Firefox              | ✅ |
+| WebKit               | ✅ |
+| Google Chrome        | ✅ |
+| Microsoft Edge       | ✅ |
+| Docker               | ✅ |
+| MongoDB              | ✅ |
+| GitHub Actions       | ✅ |
+| HTML Report          | ✅ |
+| Screenshot           | ✅ |
+| Video                | ✅ |
+| Trace                | ✅ |
 
-Este framework foi criado para demonstrar:
+---
 
-* Automação de testes de interface
-* Automação de testes de API
-* Arquitetura de framework Playwright
-* Integração contínua (CI/CD)
-* Gerenciamento de massa de dados
-* Boas práticas de QA Automation
+## 📖 Sobre o Projeto
+
+Este framework automatiza os principais fluxos da aplicação Linkaí, composta por:
+
+API REST (Node.js)
+Frontend Web (React + Vite)
+Banco de Dados MongoDB
+
+O objetivo é validar toda a aplicação, desde a interface até a camada de serviços, garantindo qualidade durante todo o ciclo de desenvolvimento.
+
+---
+
+## 🎯 Objetivos
+
+Este projeto demonstra:
+
+* Automação de testes UI
+* Automação de APIs
+* Framework Playwright com TypeScript
+* Engenharia de Qualidade
+* CI/CD utilizando GitHub Actions
+* Gerenciamento de massa de testes
+* Boas práticas de automação
 
 ---
 
@@ -54,24 +86,49 @@ Fluxos validados:
 
 Validações realizadas:
 
-* Validação de endpoints
+* Validação de endpoints REST
 * Autenticação
 * Perfil de usuário
 * Requisições e respostas da API
 
 ---
 
+## 🌐 Cross Browser Testing
+
+O framework executa automaticamente a suíte de testes nos seguintes navegadores:
+
+| Navegador        | Engine     |
+|------------------|------------|
+| Chromium         | Chromium   |
+| Google Chrome    | Chromium   |
+| Microsoft Edge   | Chromium   |
+| Firefox          | Gecko      |
+| WebKit           | WebKit     |
+
+A validação em múltiplos navegadores garante maior compatibilidade da aplicação e reduz riscos relacionados ao comportamento específico de cada browser.
+
+---
+
 ## 🏗️ Arquitetura do Projeto
 
-O framework foi estruturado seguindo o princípio de separação de responsabilidades:
+O framework foi estruturado seguindo separação de responsabilidades:
 
-* UI Tests
-* API Tests
-* Actions
-* Clients
-* Database Layer
-* Fixtures
-* CI/CD
+UI Tests / API Tests 
+        │ 
+        ▼ 
+     Actions 
+        │ 
+        ▼ 
+     Clients 
+        │ 
+        ▼ 
+  Database Layer 
+        │ 
+        ▼ 
+     Fixtures 
+        │ 
+        ▼ 
+   GitHub Actions
 
 ---
 
@@ -84,14 +141,12 @@ playwright-ts-automation-framework/
 │   │   └── playwright.yml
 │
 ├── api-doc/                  # onde se encontra as API's do Projeto usando pelo Bruno
-│
 ├── apps/                     # onde contém os dados do desenvolvimento da Aplicação
 │   ├── api
 │   ├── web
 │   └── docker-compose.yaml
 │
 ├── doc/                      
-│
 ├── support/     
 │   ├── actions/               
 │   ├── clients              # desenvolvimento das informações da API
@@ -120,6 +175,7 @@ playwright-ts-automation-framework/
 | Faker.js   | Massa de dados |
 | bcryptjs   | Criptografia   |
 | Bruno      | Documentação e testes de API |
+| Docker     | Ambiente local |
 | GitBub Actions | Integração contínua |
 
 ---
@@ -127,10 +183,12 @@ playwright-ts-automation-framework/
 ## 🧪 Estratégia de Testes
 
 * Geração dinâmica de dados com **Faker.js**
-* Criação e limpeza de dados via **MongoDB**
+* Setup e Teardown via **MongoDB**
 * Testes independentes e isolados
-* Uso de actions para reutilização de fluxos
-* Separação entre UI e API tests
+* Reutilização através de Actions
+* Separação entre UI e API
+* Execução Paralela
+* Execução Cross-Browser
 * Evidências automáticas
 
 ---
@@ -142,20 +200,20 @@ playwright-ts-automation-framework/
 npm install
 ```
 
-**Inicializar o Banco de Dados (Docker)**
+**Inicializar MongoDB**
 Na raiz da pasta `/apps`, inicie os serviços de banco de dados:
 ```bash
 docker-compose up -d
 ```
 
-**Inicializar a API (Backend)**
+**Inicializar API (Backend)**
 Em um novo terminal, acesse `/apps/api`:
 ```bash
 npm install   # Caso seja a primeira execução
 npm run dev
 ```
 
-**Inicializar a Aplicação Web App (Frontend)**
+**Inicializar Frontend**
 Em outro terminal, acesse `linkai/apps/web`:
 ```bash
 npm install   # Caso seja a primeira execução
@@ -166,86 +224,111 @@ npm run dev
 ---
 
 **Executar os testes**<br>
-| Comando               | Descrição                                |
-| :-------------------- | :--------------------------------------- |
-| `npm test`            | Executa todos os testes                  |
-| `npm run test:ui`     | Executa apenas testes UI                 |
-| `npm run test:api`    | Executa apenas testes API                |
-| `npm run test:headed` | Execução de todos os testes via headless |
-| `npm run report`      | Abre o relatório HTML                    |
+| Comando                 | Descrição                                                |
+| :---------------------- | :------------------------------------------------------- |
+| `npm test`          | Executa todos os testes                                  |
+| `npm run test:ui`       | Executa apenas testes UI                                 |
+| `npm run test:api`      | Executa apenas testes API                                |
+| `npm run test:headed`   | Execução de todos os testes via headless                 |
+| `npm run report`        | Abre o relatório HTML                                    |
+| `npm run test:chromium` | Executos todos os testes pelo navegador Chromium         |
+| `npm run test:firefox`  | Executos todos os testes pelo navegador Firefox          |
+| `npm run test:webkit`   | Executos todos os testes pelo navegador Webkit - Safari  |
+| `npm run test:edge`     | Executos todos os testes pelo navegador Microsoft Edge   |
+| `npm run test:chrome`   | Executos todos os testes pelo navegador Microsoft Google Chrome |
+
 
 ---
 
 ## 📊 Relatórios e Evidências
 
-O framework gera automaticamente:
+Após cada execução o Playwright gera automaticamente:
 
+* HTML Report
 * Screenshots
 * Vídeos
 * Traces
-* Relatório HTML
 
-Abrir relatório:
+### Estrutura da pasta
+![Estrutura Pasta](doc/pastaRelatorio.png)
+
+---
+
+### Abrindo relatório
 ```bash
 npx playwright show-report
 ```
 
-**Exemplo de Evidências**
-* Screenshot em falhas
-* Vídeo da execução
-* Trace para depuração
-* Histórico detalhado dos passos
+---
+
+### Relatório HTML
+![Relatório](doc/Relatorio_Screenshot_video.png)
+
+---
+
+### Detalhes do Caso de Teste
+![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
+
+---
+
+### Screenshot + Video
+![Detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshoteVideo.png)
 
 ---
 
 ## 🚀 Integração Contínua (GitHub Actions)
 
-O projeto possui execução automatizada utilizando GitHub Actions.
+A pipeline executa automaticamente:
 
-**Quando a Pipeline é Executada**
-* Push na branch main
-* Pull Request
-* Execução manual
-
-**Fluxo da Pipeline**
-1. Checkout do código
-2. Instalação das dependências
-3. Inicialização do MongoDB
-4. Inicialização da API
-5. Inicialização do Frontend
-6. Instalação dos browsers Playwright
-7. Execução dos testes
-8. Geração do relatório
-9. Publicação do relatório
-
-**Executar Manualmente**
-```text
-GitHub → Actions → Playwright Tests → Run Workflow
-```
-
-**Visualizar Relatórios da Pipeline**
-
-Após a execução:
-
-* Acesse Actions
-* Abra a execução desejada
-* Clique no Job "test"
-* Baixe o Artifact "playwright-report"
-
-Após extrair o ZIP:
-
-playwright-report/index.html
-
-segue imagem do relatório
-![Relatório somente com Screenshot e Video](doc/Relatorio_Screenshot_video.png)
-
-Ao clicar no caso de teste
-![Detalhe do Caso de teste com screenshot](doc/DetalheRelatorio.png)
-![Detalhe do Caso de teste com screenshot + video](doc/DetalheRelatorioScreenshoteVideo.png)
+* Checkout do código
+* Instalação das dependências
+* Inicialização do MongoDB
+* Inicialização da API
+* Inicialização do Frontend
+* Instalação dos browsers
+* Execução da suíte em:
+  - Chromium
+  - Firefox
+  - WebKit
+  - Google Chrome
+  - Microsoft Edge
+* Geração do relatório HTML
+* Publicação do Artifact
 
 ---
 
-## Consultando o Histórico da execução automatica 
+### Fluxo da Popeline (GitHub Actions)
+
+```text
+                  GitHub Actions
+                        │
+                        ▼
+             Playwright Test Runner
+                        │
+      ┌────────┬────────┬────────┬──────────────┬──────────────┐
+      │        │        │        │              │
+      ▼        ▼        ▼        ▼              ▼
+  Chromium   Firefox  WebKit  Google Chrome  Microsoft Edge
+      └────────┴────────┴────────┴──────────────┴──────────────┘
+                        │
+                        ▼
+      HTML Report + Screenshots + Videos + Traces
+```
+
+---
+
+### Visualizar Relatórios da Pipeline
+
+1. Abra Actions
+2. Selecione uma execução
+3. Clique no Job test
+4. Faça download do playwright-report
+5. Extraia o ZIP
+6. Abra ***playwright-report/index.html***
+
+---
+
+### Consultando o Histórico da execução automatica 
 
 Acesse:
 
@@ -265,16 +348,20 @@ Nessa área é possível acompanhar:
 
 ## 📊 O que este projeto demonstra
 
-* Playwright com TypeScript
+* Playwright + TypeScript
 * Testes UI e API
-* Integração com Banco de Dados
-* Geração de Massa de Dados
-* Estruturação de Framework
-* Evidências Automatizadas
+* Cross Browser Testing
+* Execução Paralela
+* Docker
+* Integração com MongoDB
 * GitHub Actions
 * CI/CD
-* Boas práticas de QA Automation
-* Arquitetura escalável
+* HTML Reports
+* Screenshots
+* Vídeos
+* Traces
+* Arquitetura Escalável
+* Boas práticas de Engenharia de Qualidade
 
 ---
 
@@ -282,12 +369,12 @@ Nessa área é possível acompanhar:
 
 Próximas evoluções:
 
-* Execução paralela em múltiplos navegadores
+* Visual Testing
 * Dashboards de métricas
 * Integração com Azure DevOps
-* Testes visuais
-* Execução distribuída
 * IA aplicada à automação de testes
+* Agentic Testing
+* Self-Healing Tests
 
 ---
 
