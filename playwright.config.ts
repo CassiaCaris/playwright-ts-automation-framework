@@ -42,8 +42,8 @@ export default defineConfig({
     },
 
     {
-       name: 'firefox',
-       use: { ...devices['Desktop Firefox'] },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
 
     {
@@ -62,10 +62,10 @@ export default defineConfig({
     //  },
 
     /* Test against branded browsers. */
-     {
-       name: 'Microsoft Edge',
-       use: { ...devices['Desktop Edge'], channel: 'msedge' },
-     },
+    {
+      name: 'Microsoft Edge',
+      use: { ...devices['Desktop Edge'], channel: 'msedge' },
+    },
     {
       name: 'Google Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
@@ -78,4 +78,6 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+
+
 });

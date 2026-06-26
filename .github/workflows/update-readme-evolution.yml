@@ -1,0 +1,54 @@
+name: Atualizar evolução do README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'support/**'
+      - 'test/**'
+      - 'doc/framework-evolution.ts'
+      - 'doc/generate-evolution.ts'
+      - 'package.json'
+      - 'package-lock.json'
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar evolução do README
+        run: npm run docs:evolution
+
+      - name: Verificar alterações
+        id: changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commitar README atualizado
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: atualiza evolução do framework"
+          git push

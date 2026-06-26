@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { frameworkEvolution } from './framework-evolution';
 
-const readmePath = path.resolve(process.cwd(), 'README.md');
+const readmePath = path.resolve(process.cwd(), 'README.md')
 
 function gerarBarra(progresso: number): string {
   const total = 10;
