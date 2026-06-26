@@ -2,6 +2,8 @@
 
 ![Playwright Tests](https://github.com/CassiaCaris/playwright-ts-automation-framework/actions/workflows/playwright.yml/badge.svg)<br>
 
+🟩 Playwright   🔵 TypeScript   🔵 GitHub Actions  🟪 Cross Browser   🔷 Docker   🟢 MongoDB
+
 Framework de automação de testes desenvolvido com **Playwright** + **TypeScript**, projetado para validar fluxos ***UI (End-to-End)*** e ***API REST***, seguindo boas práticas de Engenharia de Qualidade, integração contínua e arquitetura escalável.
 
 ---
