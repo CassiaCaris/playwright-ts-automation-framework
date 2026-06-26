@@ -1,88 +1,41 @@
-// docs/evolution/framework-evolution.ts
+import fs from 'fs';
+import path from 'path';
+import { frameworkEvolution } from './framework-evolution';
 
-export const frameworkEvolution = {
-  projectName: "Playwright TypeScript Automation Framework",
+const readmePath = path.resolve(process.cwd(), 'README.md');
 
-  currentVersion: "1.2.0",
+function gerarBarra(progresso: number): string {
+  const total = 10;
+  const preenchido = Math.round((progresso / 100) * total);
+  const vazio = total - preenchido;
 
-  lastUpdate: "2026-06-26",
+  return '█'.repeat(preenchido) + '░'.repeat(vazio);
+}
 
-  features: [
-    {
-      name: "Project Architecture",
-      progress: 100,
-      status: "Completed",
-      description: "Scalable folder structure"
-    },
+const conteudoGerado = `
+### 📊 Maturidade atual do Framework
 
-    {
-      name: "Page Object Model",
-      progress: 100,
-      status: "Completed",
-      description: "Reusable Page Objects"
-    },
+> Atualizado automaticamente em: **${frameworkEvolution.ultimaAtualizacao}**  
+> Versão atual: **${frameworkEvolution.versaoAtual}**
 
-    {
-      name: "UI Automation",
-      progress: 100,
-      status: "Completed",
-      description: "Web automation using Playwright"
-    },
+| Funcionalidade | Evolução | Status |
+|---|---|---|
+${frameworkEvolution.funcionalidades
+  .map(
+    item =>
+      `| ${item.nome} | ${gerarBarra(item.progresso)} ${item.progresso}% | ${item.status} |`
+  )
+  .join('\n')}
 
-    {
-      name: "API Automation",
-      progress: 80,
-      status: "In Progress",
-      description: "REST API testing"
-    },
+`;
 
-    {
-      name: "Fixtures",
-      progress: 80,
-      status: "In Progress",
-      description: "Reusable fixtures"
-    },
+const readme = fs.readFileSync(readmePath, 'utf8');
 
-    {
-      name: "Reports",
-      progress: 75,
-      status: "In Progress",
-      description: "HTML Report"
-    },
+const novoReadme = readme.replace(
+  /<!-- framework-evolution:start -->([\s\S]*?)<!-- framework-evolution:end -->/,
+  `<!-- framework-evolution:start -->\n${conteudoGerado}\n<!-- framework-evolution:end -->`
+);
 
-    {
-      name: "CI/CD",
-      progress: 40,
-      status: "Planned",
-      description: "GitHub Actions"
-    },
+fs.writeFileSync(readmePath, novoReadme);
 
-    {
-      name: "Docker",
-      progress: 20,
-      status: "Planned",
-      description: "Containerized execution"
-    },
-
-    {
-      name: "Database",
-      progress: 10,
-      status: "Planned",
-      description: "MongoDB support"
-    },
-
-    {
-      name: "Visual Testing",
-      progress: 0,
-      status: "Future",
-      description: "Playwright Snapshots"
-    },
-
-    {
-      name: "AI Assisted Testing",
-      progress: 0,
-      status: "Future",
-      description: "AI generated scenarios"
-    }
-  ]
-};
+console.log('README atualizado com a evolução do framework.')

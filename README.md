@@ -180,7 +180,7 @@ playwright-ts-automation-framework/
 | bcryptjs   | Criptografia   |
 | Bruno      | Documentação e testes de API |
 | Docker     | Ambiente local |
-| GitBub Actions | Integração contínua |
+| GitHub Actions | Integração contínua |
 
 ---
 
@@ -301,7 +301,7 @@ A pipeline executa automaticamente:
 
 ---
 
-### Fluxo da Popeline (GitHub Actions)
+### Fluxo da Ppeline (GitHub Actions)
 
 ```text
                   GitHub Actions
